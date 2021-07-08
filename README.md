@@ -1,16 +1,10 @@
-# Project Name
+# NGINX configs
 
-Project Description
-
-![](https://img.shields.io/codeclimate/maintainability/nhcarrigan/new-repo-template)
-![](https://img.shields.io/codeclimate/issues/nhcarrigan/new-repo-template)
-![](https://img.shields.io/codeclimate/tech-debt/nhcarrigan/new-repo-template)
-![](https://img.shields.io/lgtm/alerts/github/nhcarrigan/new-repo-template)
-![](https://img.shields.io/lgtm/grade/javascript/github/nhcarrigan/new-repo-template)
+This project holds the NGINX configs for my various servers.
 
 ## Live Version
 
-This page is not yet deployed.
+This repository holds dev-ops tooling and thus does not have a "deployment" instance.
 
 <!--This page is currently deployed. [View the live website.]()-->
 
