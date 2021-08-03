@@ -12,7 +12,7 @@ jobs:
     name: Test NGINX configs
     runs-on: ubuntu-latest
     env:
-      working-directory: ./
+      working-directory: /home/runner/work/nginx-configs/nginx-configs
 
     steps:
       - name: Checkout Source Files
