@@ -11,13 +11,13 @@ jobs:
   test:
     name: Test NGINX configs
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./
 
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@v2
       - name: Install NGINX
         run: sudo apt-get install nginx
-      - name: Get current directory
-        run: echo ::set-output name=dir::$(pwd)
       - name: Test configs
-        run: sudo nginx -c ${{steps.vars.outputs.pwd}}/nginx -t
+        run: sudo nginx -c ${{env.working-directory}}/nginx -t
