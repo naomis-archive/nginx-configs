@@ -11,13 +11,15 @@ jobs:
   test:
     name: Test NGINX configs
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        conf-file: [becca.conf, cdn.conf, dev.conf, discord-integrations.conf]
     env:
-      working-directory: /home/runner/work/nginx-configs/nginx-configs
-
+      working-directory: /home/runner/work/nginx-configs/nginx-configs/nginx
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@v2
       - name: Install NGINX
         run: sudo apt-get install nginx
-      - name: Test configs
-        run: sudo nginx -c ${{env.working-directory}}/nginx/_testing.conf -t
+      - name: Test becca.conf
+        run: sudo nginx -c ${{env.working-directory}}/${{matrix.conf-file}} -t
