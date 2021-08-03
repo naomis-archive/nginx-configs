@@ -18,4 +18,4 @@ jobs:
       - name: Install NGINX
         run: sudo apt-get install nginx
       - name: Test configs
-        run: sudo nginx -t ./nginx
+        run: sudo nginx -c ./nginx -t
