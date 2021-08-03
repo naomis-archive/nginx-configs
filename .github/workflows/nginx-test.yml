@@ -1,0 +1,21 @@
+name: NGINX Validation
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Test NGINX configs
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@v2
+      - name: Install NGINX
+        run: sudo apt-get install nginx
+      - name: Test configs
+        run: sudo nginx -t ./nginx
