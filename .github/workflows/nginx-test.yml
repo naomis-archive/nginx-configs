@@ -17,5 +17,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Install NGINX
         run: sudo apt-get install nginx
+      - name: Get current directory
+        run: echo ::set-output name=dir::$(pwd)
       - name: Test configs
-        run: sudo nginx -c ./nginx -t
+        run: sudo nginx -c ${{steps.vars.outputs.pwd}}/nginx -t
